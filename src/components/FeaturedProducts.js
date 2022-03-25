@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./common/Button";
 import featuredProducts from "./featured-products.json";
 
 export default function FeaturedProducts() {
@@ -15,10 +16,13 @@ export default function FeaturedProducts() {
               src={product.data.mainimage.url}
               alt={product.data.mainimage.alt}
             />
-            <p className="product-description">{product.data.description[0].text}</p>
+            <p className="product-description">
+              {product.data.description[0].text}
+            </p>
           </div>
         );
       })}
+      <Button>View all products</Button>
     </section>
   );
 }
