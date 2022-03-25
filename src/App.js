@@ -1,14 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+
+import "./App.css";
+import UILayout from "./layout/UILayout";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const { data, isLoading } = useFeaturedBanners();
-  console.log(data, isLoading);
-
+  
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -21,7 +20,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <UILayout >
+        <HomePage />
+      </UILayout>
     </div>
   );
 }
