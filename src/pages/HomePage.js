@@ -1,13 +1,15 @@
 import React from "react";
-import Slider from "../components/Slider";
-import Carousel from "../components/Carousel";
+import FeaturedBanners from "../components/FeaturedBanners";
+import ProductCategories from "../components/ProductCategories";
+import FeaturedProducts from "../components/FeaturedProducts";
+import Content from "../components/common/Content";
 
 export default function HomePage() {
   return (
-    <>
-      <Slider />
-      <Carousel />
-      <div>Grid</div>
-    </>
+    <Content>
+      <FeaturedBanners />
+      <ProductCategories />
+      <FeaturedProducts />
+    </Content>
   );
 }

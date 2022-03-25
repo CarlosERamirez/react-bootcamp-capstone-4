@@ -1,9 +1,13 @@
+body {
+  background-color: #bbcabd;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,8 +18,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #173672; */
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,25 +40,58 @@
     transform: rotate(360deg);
   }
 }
+section {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
 .slider {
   position: relative;
-  height: 100vh;
-  display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
 }
 
 .imageSlider {
   width: 1000px;
   height: 600px;
   border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 4px 4px 8px;
 }
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px 200px;
+}
+
+.cell {
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageGrid {
+  width: 400px;
+  height: 240px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 4px 4px 8px;
+}
+
+/* .product-description {
+  width: 400px;
+} */
 
 .right-arrow {
   position: absolute;
   top: 50%;
-  right: 32px;
+  right: 12px;
   font-size: 3rem;
   z-index: 10;
   cursor: pointer;
@@ -64,20 +101,21 @@
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
+  left: 12px;
   font-size: 3rem;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
 
-.slide {
-  opacity: 0;
+.inactive {
+  /* opacity: 0; */
+  display: none;
   transition-duration: 1s ease;
 }
 
-.slide.active {
-  opacity: 1;
+.active {
+  /* opacity: 1; */
   transition: 1s;
-  transform: scale(1.08)
+  transform: scale(0.8)
 }

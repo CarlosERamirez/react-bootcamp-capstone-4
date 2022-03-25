@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useFeaturedBanners } from "../utils/hooks/useFeaturedBanners";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
-export default function Slider() {
+export default function FeaturedBanners() {
   const [currImage, setCurrImage] = useState(0);
   // const { data: { results = [] } = {}, isLoading } = useFeaturedBanners(); // CERS
   const { data, isLoading } = useFeaturedBanners();
@@ -19,20 +19,27 @@ export default function Slider() {
   return (
     <section className="slider">
       <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      {data?.results?.map((banner, index) => {
-        return (
-          <div className={index === currImage ? 'slide active' : 'slide'} key={index} >
-            {index === currImage && (
-              <img
-                className="imageSlider"
-                key={banner.id}
-                src={banner.data.main_image.url}
-                alt={banner.data.main_image.alt}
-              />
-            )}
-          </div>
-        );
-      })}
+      <ul className="slider">
+        {data?.results?.map((banner, index) => {
+          return (
+            <li
+              className={index === currImage ? "cell active" : "cell inactive"}
+              key={index}
+            >
+              <h1>{banner.data.title}</h1>
+              {index === currImage && (
+                <img
+                  className="imageSlider"
+                  key={banner.id}
+                  src={banner.data.main_image.url}
+                  alt={banner.data.main_image.alt}
+                />
+              )}
+              <p>{banner.data.description[0].text}</p>
+            </li>
+          );
+        })}
+      </ul>
       <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
     </section>
   );
